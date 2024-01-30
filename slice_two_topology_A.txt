@@ -1,0 +1,5 @@
+HostToRouter
+(h2,s1)
+(h4,s2)
+RouterToRouter
+(s1-eth1,s2-eth1)

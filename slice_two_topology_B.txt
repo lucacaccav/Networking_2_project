@@ -1,0 +1,8 @@
+HostToRouter
+(h2,s2)
+(h3,s3)
+(h6,s4)
+RouterToRouter
+(s1-eth1-50,s4-eth1-50)
+(s1-eth2-50,s2-eth1-50)
+(s3-eth1-10,s2-eth2-10)
