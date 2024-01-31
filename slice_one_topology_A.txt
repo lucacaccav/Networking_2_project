@@ -2,5 +2,5 @@ HostToRouter
 (h1,s1)
 (h3,s2)
 RouterToRouter
-(s1-eth1-10,s2-eth1-10)
+(s1-eth1-70,s2-eth1-70)
 
