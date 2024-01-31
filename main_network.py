@@ -316,7 +316,7 @@ class Network:
         return host_to_host_path
         
     def print(self):
-        print(f"Network_topology: (file_name)")
+        print(f"Network_topology: {self.network_topology_file_name}")
         self.network_topology.print()
         print(f"Slices:")
         for slice in self.slices:
