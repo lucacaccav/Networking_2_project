@@ -7,9 +7,9 @@
 ## Project Description: ##
 
 
-### Project Description: ###
+### Example B ###
 
-#### Example B: How to Run ####
+#### How to Run ####
 
 1. Enabling Ryu controller to load the application and to run in the background:
 ```bash
@@ -31,14 +31,14 @@ $ sudo mn -c
 
 #### How to Verify ####
 
-Add a new topology contained in the file text network_topology_B.txt. Network topology B is the following:
+1. Add the topology contained in the file text network_topology_B.txt. Network topology B is the following:
 ![alt text](network_topology_B.png "network_topology_B")
 ```bash
 $ sudo python3 cli_application.py add -t .\network_topology_B.txt
 ```
-There is no active slice is active and therefore the network is completely stopped.
+There is no active slice and therefore the network is completely stopped. In fact, checking the connectivity the result is the following:
 
-1. ping mode: verifying connecitvity, e.g.:
+- ping mode: verifying connectivity, e.g.:
 ```bash
 mininet> pingall
 *** Ping: testing ping reachability
@@ -51,8 +51,9 @@ h6 -> X X X X X
 *** Results: 100% dropped (0/30 received)
 ```
 
-Then add a slice and activate it. For example, add slice_one_topology_B.txt. When it asks, enter the id representing the slicer two from the keyboard, for example 123.
+2. Then add a slice and activate it. For example, add slice_one_topology_B.txt. When it asks, enter the id representing the slice two from the keyboard, for example 123.
 Slice one topology B is the following:
+
 ![alt text](slice_one_topology_B.png "slice_one_topology_B")
 
 ```bash
@@ -62,10 +63,9 @@ $ sudo python3 cli_application.py add -s .\slice_one_topology_B.txt
 $ sudo python3 cli_application.py activate -s .\slice_one_topology_B.txt
 ```
 
-Verify the isolation of the slice in Mininet with pingall command. Then verify bandwidth between host with iperf mode.
+3. Verify the isolation of the slice in Mininet with pingall command. Then verify bandwidth between host that belong to the slice with iperf mode. Remember that the percentage of the link is indicated in the file slice_one_topology_B.txt.
 
-1. pingall mode: verifying slice_one_topology_B isolation:
-*Example B: slice_one_topology_B activated* 
+- pingall mode: verifying slice_one_topology_B isolation:
 ```bash
 mininet> pingall
 *** Ping: testing ping reachability
@@ -78,8 +78,7 @@ h6 -> X X X X X
 *** Results: 80% dropped (6/30 received)
 ```
 
-2. iperf mode: verifying slice_one_topology_B bandwidth:
-*Example B: slice_one_topology_B activated* 
+- iperf mode: verifying slice_one_topology_B bandwidth:
 ```bash
 mininet> iperf h1 h4
 *** Iperf: testing TCP bandwidth between h1 and h4 
@@ -92,18 +91,19 @@ mininet> iperf h5 h4
 *** Results: ['756 Kbits/sec', '973 Kbits/sec']
 ```
 
-Then, add the other slice: slice_two_topology_B.txt. When it asks, enter the id representing the slicer two from the keyboard, for example 234.
+4. Then, add the other slice: slice_two_topology_B.txt. When it asks, enter the id representing the slicer two from the keyboard, for example 234.
 Slice two topology B is the following:
+
 ![alt text](slice_two_topology_B.png "slice_two_topology_B")
 
 ```bash
 $ sudo python3 cli_application.py add -s .\slice_two_topology_B.txt
 ```
-If you want to visualize the actual configuration of the network use the commando show.
+If you want to visualize the actual configuration of the network use the command show.
 ```bash
 $ sudo python3 cli_application.py show
 ```
-It should show:
+It should show the following. As we expected, we can see that the "slice one topology B" is active (slice_state is true), whereas "slice two topology B" is not active (slice_state is False).
 
 ```
 Network_topology: network_topology_B.txt
@@ -141,14 +141,13 @@ RouterToRouter
 (s3-eth1-10,s2-eth2-10)
 ```
 
-Then, activate the slice_two_topology_B.
+5. Then, activate the slice_two_topology_B.
 ```bash
 $ sudo python3 cli_application.py activate -s .\slice_two_topology_B.txt
 ```
 Verify the isolation of the slice in Mininet with pingall command. Then verify bandwidth between host with iperf mode.
 
-1. pingall mode: verifying slice_two_topology_B isolation:
-*Example B: slice_one_topology_B and slice_two_topology_B activated* 
+- pingall mode: verifying slice_two_topology_B isolation:
 ```bash
 mininet> pingall
 *** Ping: testing ping reachability
@@ -161,8 +160,7 @@ h6 -> X h2 h3 X X
 *** Results: 60% dropped (12/30 received)
 ```
 
-2. iperf mode: verifying slice_two_topology_B bandwidth:
-*Example B: slice_two_topology_B activated* 
+- iperf mode: verifying slice_two_topology_B bandwidth:
 ```bash
 mininet> iperf h2 h3
 *** Iperf: testing TCP bandwidth between h2 and h3 
