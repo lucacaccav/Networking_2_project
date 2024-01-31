@@ -133,8 +133,8 @@ mininet> pingall
 h1 -> X h3 X 
 h2 -> X X h4 
 h3 -> h1 X X
-h4 -> X h1 X
-*** Results: 60% dropped (4/12 received)
+h4 -> X h2 X
+*** Results: 66% dropped (4/12 received)
 ```
 
 - iperf mode: verifying slice_two_topology_A bandwidth:
