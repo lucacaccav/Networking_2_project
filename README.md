@@ -48,7 +48,7 @@ h4 -> X X X
 *** Results: 100% dropped (0/12 received)
 ```
 
-2. Then add a slice and activate it. For example, add slice_one_topology_A.txt. When it asks, enter the id representing the slice two from the keyboard, for example 123.
+2. Then add a slice and activate it. For example, add slice_one_topology_A.txt. When it asks, enter the id representing the slice one from the keyboard, for example 123.
 Slice one topology A is the following:
 
 ![alt text](slice_one_topology_A.png "slice_one_topology_A")
