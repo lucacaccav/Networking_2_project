@@ -31,7 +31,8 @@ $ sudo mn -c
 
 #### How to Verify ####
 
-Add a new topology contained in the file text network_topology_B.txt: 
+Add a new topology contained in the file text network_topology_B.txt. Network topology B is the following:
+![alt text](network_topology_B.png "network_topology_B")
 ```bash
 $ sudo python3 cli_application.py add -t .\network_topology_B.txt
 ```
@@ -51,6 +52,8 @@ h6 -> X X X X X
 ```
 
 Then add a slice and activate it. For example, add slice_one_topology_B.txt. When it asks, enter the id representing the slicer two from the keyboard, for example 123.
+Slice one topology B is the following:
+![alt text](slice_one_topology_B.png "slice_one_topology_B")
 
 ```bash
 $ sudo python3 cli_application.py add -s .\slice_one_topology_B.txt
@@ -90,6 +93,8 @@ mininet> iperf h5 h4
 ```
 
 Then, add the other slice: slice_two_topology_B.txt. When it asks, enter the id representing the slicer two from the keyboard, for example 234.
+Slice two topology B is the following:
+![alt text](slice_two_topology_B.png "slice_two_topology_B")
 
 ```bash
 $ sudo python3 cli_application.py add -s .\slice_two_topology_B.txt
