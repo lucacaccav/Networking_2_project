@@ -1,10 +1,52 @@
-# Networking_2_project
-#  #
+# On Demand SDN Slices in ComNetsEmu #
 
 ## Short Introduction ##
 
+The goal of the project is to implement a network slicing approach to enable dynamic activation/de-activation of network slices via CLI/GUI commands. 
 
 ## Project Description: ##
+
+In this project a CLI application was developed. Its main function is to generate rules that will be inserted into the switch table flows. The latter will allow the activation and deactivation of slices given a basic network topology.
+
+The available commands of the CLI application are the following:
+
+- for adding the basic network topology and a slice respectively. Their description is contained in the text files respectively network_topology_A.txt and slice_one_topology_A.txt
+  * python3 cli_application.py add -t .\network_topology_A.txt
+  * python3 cli_application.py add -s .\slice_one_topology_A.txt
+- for the activation/deactivation of a specific slice. It is always necessary to specify the name of the file associated with the slice.
+  * python3 cli_application.py activate -s .\slice_one_topology_A.txt
+  * python3 cli_application.py deactivate -s .\slice_one_topology_A.txt
+- for viewing the CLI application memory on stdout. That is, the basic topology present, the slices present and their relative active/inactive status
+  * python3 cli_application.py show
+- for deleting the network topology (this also involves deleting all slices)
+  * python3 cli_application.py delete -t .\network_topology_A.txt
+- for deleting a particular slice
+  * python3 cli_application.py delete -s .\slice_one_topology_A.txt
+
+In text files describing the network topology (e.g. network_topology_A.txt), the network is represented as follows. 
+
+The first section "HostToRouter" describes the connections between hosts and routers in pairs.
+The second section "RouterToRouter" describes the connections between two routers in pairs. For example, in this case the switch s2 can be reached from s1 via the eht1 port. Conversely, s1 can be reached from s2 via the eht1 port.
+```
+HostToRouter
+(h1,s1)
+(h2,s1)
+(h3,s2)
+(h4,s2)
+RouterToRouter
+(s1-eth1,s2-eth1)
+```
+Instead, in text files describing the slice topology (e.g. slice_one_topology_A.txt), the slice is represented as follows.
+Here, the only difference with the previous template is the specification of the percentage of bandwidth of the link between the switches
+```
+HostToRouter
+(h1,s1)
+(h3,s2)
+RouterToRouter
+(s1-eth1-70,s2-eth1-70)
+
+```
+
 
 ### Example A ###
 
