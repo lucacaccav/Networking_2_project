@@ -8,6 +8,23 @@ The goal of the project is to implement a network slicing approach to enable dyn
 
 In this project a CLI application was developed. Its main function is to generate rules that will be inserted into the switch table flows. The latter will allow the activation and deactivation of slices given a basic network topology.
 
+This folder contains the following files:
+
+1. my_network_A.py: Python script to build the network described in network_topology_A.txt
+2. my_network_B.py: Python script to build the network described in network_topology_B.txt
+3. snd_controller.py: Python script where is implemented an OpenFlow 1.0 L2 learning switch
+4. main_network.py: Python script where the data structures (such as classes and methods) are defined to implement the slice activation and deactivation operations
+5. cli_application.py: Python script where the command line interface is defined. The commands are associated with the functions present in main_network.py
+6. saved_object.pkl: memory of the CLI application
+7. network_topology_A.txt, slice_one_topology_A.txt, slice_two_topology_A.txt, network_topology_B.txt, slice_one_topology_B.txt, slice_two_topology_B.txt: text files that contain the description of the network topology or slices.
+8. terminal_test.txt: file text where the command executed by the CLI application in the shelle are writed in order to understand how the CLI application works
+
+
+
+The network will be generated using Mininet and simultaneously running an OpenFlow 1.0 L2 learning switch. At the same time the entire network topology and any slices will be described in text files with the use of an ad hoc template (described subsequently). 
+
+The network topology and slice templates will be added to the CLI application memory. This will allow, based on the commands sent to the CLI application, to perform the function for which the CLI application is designated.
+
 The available commands of the CLI application are the following:
 
 - for adding the basic network topology and a slice respectively. Their description is contained in the text files respectively network_topology_A.txt and slice_one_topology_A.txt
