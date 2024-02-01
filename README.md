@@ -17,7 +17,7 @@ This folder contains the following files:
 5. cli_application.py: Python script where the command line interface is defined. The commands are associated with the functions present in main_network.py
 6. saved_object.pkl: memory of the CLI application
 7. network_topology_A.txt, slice_one_topology_A.txt, slice_two_topology_A.txt, network_topology_B.txt, slice_one_topology_B.txt, slice_two_topology_B.txt: text files that contain the description of the network topology or slices.
-8. terminal_test.txt: file text where the command executed by the CLI application in the shelle are writed in order to understand how the CLI application works
+8. terminal_test.txt: file text where the command executed by the CLI application in the shell are writed in order to understand how the CLI application works
 
 
 
