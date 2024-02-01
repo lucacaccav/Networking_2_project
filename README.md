@@ -373,6 +373,11 @@ mininet> iperf h3 h6
 
 ## Implementation Details ##
 
+Further implementation details are present in the following presentation:
+
+[Project_Implementation_Description.pdf](CACCAVALE_LUCA__Project_Implementation_Description.pdf)
+
+
 ### Contributing
 
 The Contributors of this project are the following:
